@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>후쿠오카 3박 4일</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #222633;
+      --muted: #6b7280;
+      --line: #e3e6ee;
+      --d1: #e8505b; /* Day 1 */
+      --d2: #f0922b; /* Day 2 */
+      --d3: #2e9e6b; /* Day 3 */
+      --d4: #3b6fd8; /* Day 4 */
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      line-height: 1.5;
+    }
+    header {
+      padding: 28px 16px 20px;
+      background: #1f2a44;
+      color: #fff;
+    }
+    header h1 { margin: 0 0 4px; font-size: 1.5rem; }
+    header p { margin: 0; opacity: .8; font-size: .95rem; }
+    main { max-width: 560px; margin: 0 auto; padding: 8px 16px 40px; }
+    section { margin-top: 28px; }
+    h2 { font-size: 1.15rem; margin: 0 0 12px; }
+
+    /* Day 색 지정 */
+    #day1 { --c: var(--d1); }
+    #day2 { --c: var(--d2); }
+    #day3 { --c: var(--d3); }
+    #day4 { --c: var(--d4); }
+
+    .day {
+      background: var(--card);
+      border-radius: 14px;
+      border-top: 5px solid var(--c);
+      padding: 14px 16px 18px;
+      margin-bottom: 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    }
+    .day h3 {
+      display: inline-block;
+      margin: 0 0 12px;
+      padding: 2px 12px;
+      border-radius: 999px;
+      background: var(--c);
+      color: #fff;
+      font-size: .95rem;
+    }
+
+    /* 세로 타임라인 */
+    .day ol {
+      list-style: none;
+      margin: 0;
+      padding: 0 0 0 32px;
+      position: relative;
+    }
+    .day ol::before {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 8px;
+      bottom: 8px;
+      width: 3px;
+      border-radius: 2px;
+      background: var(--c);
+      opacity: .35;
+    }
+    .day li {
+      position: relative;
+      padding: 8px 0;
+      font-size: 1.02rem;
+    }
+    .day li::before {
+      content: "";
+      position: absolute;
+      left: -32px;
+      top: 14px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--card);
+      border: 3px solid var(--c);
+    }
+
+    /* 예산 표 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    }
+    th, td { padding: 12px 16px; text-align: left; }
+    td:last-child, th:last-child { text-align: right; }
+    thead th { background: #eef0f6; color: var(--muted); font-size: .85rem; }
+    tbody td { border-top: 1px solid var(--line); }
+    tfoot th {
+      background: #1f2a44;
+      color: #fff;
+      font-size: 1.05rem;
+    }
+
+    /* 준비물 체크리스트 */
+    #checklist ul { list-style: none; margin: 0; padding: 0; }
+    #checklist li { margin-bottom: 8px; }
+    #checklist label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 52px;
+      padding: 0 16px;
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.06);
+      font-size: 1.02rem;
+      cursor: pointer;
+    }
+    #checklist input {
+      width: 22px;
+      height: 22px;
+      accent-color: #1f2a44;
+      flex: none;
+    }
+    #checklist label:has(input:checked) {
+      color: var(--muted);
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>후쿠오카 3박 4일</h1>
+    <p>10월 출발 · 성인 4명</p>
+  </header>
+
+  <main>
+    <section id="schedule">
+      <h2>날짜별 일정</h2>
+
+      <article id="day1" class="day">
+        <h3>1일차</h3>
+        <ol>
+          <li>오후 도착</li>
+          <li>캐널시티</li>
+          <li>나카스 포장마차 (저녁)</li>
+        </ol>
+      </article>
+
+      <article id="day2" class="day">
+        <h3>2일차</h3>
+        <ol>
+          <li>다자이후 텐만구</li>
+          <li>스타벅스 다자이후점</li>
+          <li>저녁 모츠나베</li>
+        </ol>
+      </article>
+
+      <article id="day3" class="day">
+        <h3>3일차</h3>
+        <ol>
+          <li>유후인 당일치기 (버스 왕복)</li>
+          <li>긴린코 호수</li>
+        </ol>
+      </article>
+
+      <article id="day4" class="day">
+        <h3>4일차</h3>
+        <ol>
+          <li>하카타역 쇼핑</li>
+          <li>오후 출국</li>
+        </ol>
+      </article>
+    </section>
+
+    <section id="budget">
+      <h2>1인 예산</h2>
+      <table>
+        <thead>
+          <tr><th>항목</th><th>금액</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>항공</td><td data-amount="25">25만원</td></tr>
+          <tr><td>숙소 (3박)</td><td data-amount="18">18만원</td></tr>
+          <tr><td>식비</td><td data-amount="15">15만원</td></tr>
+          <tr><td>교통</td><td data-amount="8">8만원</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><th>합계</th><th id="budget-total">66만원</th></tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <section id="checklist">
+      <h2>준비물</h2>
+      <ul>
+        <li><label><input type="checkbox" data-key="passport"> 여권</label></li>
+        <li><label><input type="checkbox" data-key="sim"> 유심</label></li>
+        <li><label><input type="checkbox" data-key="yen"> 1인 엔화 3만엔</label></li>
+        <li><label><input type="checkbox" data-key="umbrella"> 우산</label></li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    // 예산 합계: 표의 항목 금액을 더해 표시
+    var total = 0;
+    document.querySelectorAll('#budget [data-amount]').forEach(function (cell) {
+      total += Number(cell.dataset.amount);
+    });
+    document.getElementById('budget-total').textContent = total + '만원';
+
+    // 준비물 체크 상태 저장/복원 (localStorage 사용 불가 시에도 체크는 동작)
+    var STORAGE_KEY = 'fukuoka-checklist';
+    var boxes = document.querySelectorAll('#checklist input[type="checkbox"]');
+    var saved = {};
+    try {
+      saved = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+    } catch (e) {}
+
+    boxes.forEach(function (box) {
+      box.checked = !!saved[box.dataset.key];
+      box.addEventListener('change', function () {
+        saved[box.dataset.key] = box.checked;
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+        } catch (e) {}
+      });
+    });
+  </script>
+</body>
+</html>
