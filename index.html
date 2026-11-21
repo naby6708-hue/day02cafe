@@ -5,13 +5,220 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>브루잉로드 | 김포 걸포동 로스터리 카페</title>
   <meta name="description" content="매일 아침 볶는 싱글 오리진, 김포 걸포동 브루잉로드">
+  <meta name="theme-color" content="#4a3222">
+  <style>
+    :root {
+      --wood-dark: #3e2a1c;
+      --wood: #7a5233;
+      --wood-light: #b98a5b;
+      --cream: #f6ecdc;
+      --paper: #fffaf1;
+      --line: #e3d2b8;
+      --text: #3b2a1e;
+      --muted: #7d6853;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+        "Malgun Gothic", "Noto Sans KR", sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 520px;
+      margin: 0 auto;
+      min-height: 100vh;
+      background: var(--cream);
+    }
+
+    /* 소개 */
+    header {
+      background:
+        repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 2px, transparent 2px 14px),
+        linear-gradient(180deg, #4a3222, var(--wood-dark));
+      color: var(--cream);
+      text-align: center;
+      padding: 48px 20px 36px;
+      border-bottom: 6px solid var(--wood-light);
+    }
+
+    header h1 {
+      margin: 0 0 6px;
+      font-size: 2.2rem;
+      letter-spacing: 0.04em;
+    }
+
+    header .tagline {
+      margin: 0 0 4px;
+      font-size: 1.1rem;
+      color: #f0d9b5;
+    }
+
+    header .since {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #cdb592;
+    }
+
+    #status {
+      display: inline-block;
+      margin: 18px 0 0;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(246, 236, 220, 0.14);
+      border: 1px solid rgba(246, 236, 220, 0.35);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    #status:empty { display: none; }
+
+    header ul {
+      list-style: none;
+      margin: 22px 0 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    header li {
+      padding: 4px 12px;
+      border-radius: 6px;
+      background: var(--wood);
+      font-size: 0.9rem;
+    }
+
+    /* 본문 카드 */
+    main {
+      padding: 20px 16px 8px;
+    }
+
+    section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 0 rgba(122, 82, 51, 0.08);
+    }
+
+    section h2 {
+      margin: 0 0 14px;
+      font-size: 1.25rem;
+      color: var(--wood);
+    }
+
+    section h2::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 1em;
+      margin-right: 10px;
+      vertical-align: -0.12em;
+      border-radius: 3px;
+      background: var(--wood-light);
+    }
+
+    section ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    section li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    section li:last-child { border-bottom: 0; }
+
+    section li span:last-child {
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    #hours li:last-child span:last-child { color: #a3402f; }
+
+    section p { margin: 0 0 6px; }
+
+    #location p:nth-of-type(2) { color: var(--muted); }
+
+    /* 버튼 */
+    .btn {
+      display: block;
+      width: 100%;
+      margin-top: 12px;
+      padding: 16px 18px;
+      border-radius: 12px;
+      border: 2px solid var(--wood);
+      background: transparent;
+      color: var(--wood);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn:active { transform: translateY(1px); }
+
+    .btn-primary {
+      background: var(--wood);
+      color: var(--cream);
+      box-shadow: 0 3px 0 var(--wood-dark);
+    }
+
+    .btn:focus-visible {
+      outline: 3px solid var(--wood-light);
+      outline-offset: 2px;
+    }
+
+    #location .btn, #contact .btn { margin-top: 14px; }
+
+    footer {
+      padding: 20px 16px 32px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer p { margin: 0; }
+
+    /* PC 화면 */
+    @media (min-width: 600px) {
+      body { background: #e8d7bd; }
+      .page {
+        margin: 24px auto;
+        min-height: 0;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(62, 42, 28, 0.22);
+      }
+    }
+  </style>
 </head>
 <body>
+<div class="page">
 
   <header id="intro">
     <h1>브루잉로드</h1>
-    <p>매일 아침 볶는 싱글 오리진</p>
-    <p>2019년 오픈 · 원두 직접 로스팅</p>
+    <p class="tagline">매일 아침 볶는 싱글 오리진</p>
+    <p class="since">2019년 오픈 · 원두 직접 로스팅</p>
+    <p id="status" aria-live="polite"></p>
     <ul>
       <li>8석</li>
       <li>노트북 사용 가능</li>
@@ -42,18 +249,53 @@
       <h2>위치</h2>
       <p>경기도 김포시 걸포동</p>
       <p>걸포북변역에서 도보 5분</p>
+      <a id="map-btn" class="btn btn-primary" href="https://map.naver.com/p/search/%EA%B9%80%ED%8F%AC%20%EA%B1%B8%ED%8F%AC%EB%8F%99%20%EB%B8%8C%EB%A3%A8%EC%9E%89%EB%A1%9C%EB%93%9C" target="_blank" rel="noopener">지도 보기</a>
     </section>
 
     <section id="contact">
       <h2>연락처</h2>
-      <p>전화: 031-000-0000</p>
-      <p>인스타그램: @brewingroad</p>
+      <a id="call-btn" class="btn btn-primary" href="tel:031-000-0000">전화 걸기 031-000-0000</a>
+      <a id="insta-btn" class="btn" href="https://www.instagram.com/brewingroad/" target="_blank" rel="noopener">인스타그램 @brewingroad</a>
     </section>
   </main>
 
   <footer>
     <p>© 브루잉로드</p>
   </footer>
+
+</div>
+
+  <script>
+    // 요일별 영업시간 (0=일 ... 6=토), null = 휴무
+    var HOURS = {
+      0: [10, 18],
+      1: null,
+      2: [8, 20],
+      3: [8, 20],
+      4: [8, 20],
+      5: [8, 20],
+      6: [10, 18]
+    };
+
+    function updateStatus() {
+      var now = new Date();
+      var today = HOURS[now.getDay()];
+      var hour = now.getHours() + now.getMinutes() / 60;
+      var text;
+      if (!today) {
+        text = "오늘은 휴무일입니다";
+      } else if (hour >= today[0] && hour < today[1]) {
+        text = "지금 영업 중 · " + today[1] + "시까지";
+      } else if (hour < today[0]) {
+        text = "영업 전 · " + today[0] + "시에 문을 엽니다";
+      } else {
+        text = "오늘 영업이 끝났습니다";
+      }
+      document.getElementById("status").textContent = text;
+    }
+
+    updateStatus();
+  </script>
 
 </body>
 </html>
